@@ -10,7 +10,7 @@ const FileSchema = new mongoose.Schema({
         required: true
     },
     password: String,
-    downloadCounnt: {
+    downloadCount: {
         type: Number,
         required: true,
         default: 0

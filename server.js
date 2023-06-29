@@ -5,7 +5,7 @@ import { config } from "dotenv";
 import bcrypt from "bcrypt";
 import { File } from "./models/File.js";
 
-config()
+config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -43,9 +43,9 @@ const handleDownload = async (req, res) => {
             return;
         }
     }
-    file.downloadCounnt++;
+    file.downloadCount++;
     await file.save();
-    console.log(file.downloadCounnt);
+    console.log(file.downloadCount);
 
     res.download(file.path, file.originalName);
 }
